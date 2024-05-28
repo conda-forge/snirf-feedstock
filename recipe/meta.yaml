@@ -1,5 +1,5 @@
 {% set name = "snirf" %}
-{% set version = "0.7.4" %}
+{% set version = "0.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/snirf-{{ version }}.tar.gz
-  sha256: bf214ff1bbad2a9971efd54cb696fa49e4f185a65578024be2379210e4ebcaa9
+  sha256: e78f207608b986ab2df773bba3475895a792ee699451423ca5f0cfad50a17b8a
 
 build:
   noarch: python
