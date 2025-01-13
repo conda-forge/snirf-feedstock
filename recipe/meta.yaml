@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/snirf-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/snirf-{{ version }}.tar.gz
   sha256: e78f207608b986ab2df773bba3475895a792ee699451423ca5f0cfad50a17b8a
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
     - h5py >=3.1.0  # needed for import in setup.py
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - h5py >=3.1.0
     - numpy
     - setuptools
@@ -35,6 +35,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/BUNPC/pysnirf2
